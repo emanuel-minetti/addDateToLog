@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tail -n 0 --follow=name ./test.log | while IFS= read -r line; do echo "$(date --iso-8601=seconds) $line"; done >> ./newTest.log &
+
