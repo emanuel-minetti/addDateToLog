@@ -17,4 +17,9 @@ if `/path/to/LogFile.log` the path to your log file and `./newTest.log`
 with `/path/to/NewLogFile.log`. Be carefull: There is a long line in `addDate`!
 If You use `nano` to edit the file, use `nano -w`!
 
+Make the script executable:
+```bash
+chmod a+x addDate
+```
+
 ## Running and Stopping
