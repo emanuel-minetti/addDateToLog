@@ -10,7 +10,11 @@ line. Then here you find the solution.
 Make sure you have `git` installed. Then move a directory
 where you want the script to be installed. Execute:
 ```bash
-git clone 
+git clone https://github.com/emanuel-minetti/addDateToLog.git
 ```
+Replace `./test.log` in `addDate` with `/path/to/LogFile.log`
+if `/path/to/LogFile.log` the path to your log file and `./newTest.log`
+with `/path/to/NewLogFile.log`. Be carefull: There is a long line in `addDate`!
+If You use `nano` to edit the file, use `nano -w`!
 
 ## Running and Stopping
