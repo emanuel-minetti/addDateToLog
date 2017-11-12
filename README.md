@@ -1,10 +1,10 @@
 # addDateToLog
 A bash script to add dates to log files
 ## Scenario
-Suppose you have programm runninig that writes a log file
-but it misses to write dates to its entries, whitch consist
-of a line of text, and you want to add Dates to each written
-line. Then here you find the solution.
+Suppose you have a programm runninig that writes a log file
+but it misses to write dates to its entries. If the entries consist
+of a single line of text and you want to add Dates to each written
+line, then here you find the solution.
 
 ## Installing
 Make sure you have `git` installed. Then move to a directory
