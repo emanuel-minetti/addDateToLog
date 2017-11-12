@@ -12,6 +12,10 @@ where you want the script to be installed. Execute:
 ```bash
 git clone https://github.com/emanuel-minetti/addDateToLog.git
 ```
+Change to the newly created directory:
+```bash
+cd addDateToLog
+```
 Replace `./test.log` in `addDate` with `/path/to/LogFile.log`
 if `/path/to/LogFile.log` the path to your log file and `./newTest.log`
 with `/path/to/NewLogFile.log`. Be carefull: There is a long line in `addDate`!
@@ -23,3 +27,13 @@ chmod a+x addDate
 ```
 
 ## Running and Stopping
+
+Run the script by
+```bash
+./addLog
+```
+Stop it by
+
+```bash
+killall addDate
+```
