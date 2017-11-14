@@ -7,11 +7,18 @@ function printUsageText
     echo "Usage: ./addDate [-[h|v]] fromFile toFile"
 }
 
+function printHelpText
+{
+    echo
+"This is the help text!"
+}
+
 # process options
 while getopts ":hv" opt; do
-    case $opt in
-        h  ) echo "This is the help text!";;
-        v  ) echo "This is the version text!";;
+    case ${opt} in
+        h  ) printHelpText;;
+        v  ) echo "This is addDate version 0.0.0
+        (c) 2017 by Emanuel Minetti";;
         \? ) printUsageText
              exit 1
     esac
@@ -21,14 +28,24 @@ shift $(($OPTIND - 1))
 # do the job
 fromFile=$1
 toFile=$2
-if [ -z "$fromFile" ] || [ -z "$toFile" ]; then
+if [ -z "$fromFile" ] && [ -z "$toFile" ]; then
+    echo "File names missing"
+    printUsageText
+    exit 1
+
+elif [ -z "$fromFile" ] || [ -z "$toFile" ]; then
     echo "File name missing"
     printUsageText
     exit 1
-    #TODO test file for reading and writing rights
-else
-    tail -n 0 --follow=name $1 | while IFS= read -r line; do
-        echo "$(date --iso-8601=seconds) $line";
-    done >> $2 &
 fi
+if ! [ -e "$fromFile" ]; then
+    echo "fromFile does'nt exist!"
+    printUsageText
+    exit 1
+fi
+#TODO test file for reading and writing rights
+#TODO add stopping option and kill tail
+tail -n 0 --follow=name $1 | while IFS= read -r line; do
+    echo "$(date --iso-8601=seconds) $line";
+done >> $2 &
 
